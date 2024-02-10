@@ -17,6 +17,8 @@
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   programs.zsh.enable = true;
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -33,8 +35,12 @@ services.pipewire = {
   # If you want to use JACK applications, uncomment this
   #jack.enable = true;
 };
-
-
+  programs.steam = {
+  enable = true;
+  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+};
+  
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
@@ -90,7 +96,8 @@ services.pipewire = {
   obs-studio
   gimp
   wine
-   
+  wine64
+  steam   
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
