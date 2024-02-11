@@ -100,7 +100,10 @@ services.pipewire = {
   wine
   wine64
   steam
-  docker   
+  docker
+  google-chrome
+  woeusb
+  tor-browser   
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
