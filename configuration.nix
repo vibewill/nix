@@ -19,6 +19,9 @@
   programs.zsh.enable = true;
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
+  virtualisation.docker.enable = true;
+  users.extraGroups.docker.members = [ "vibewill-with-access-to-socket" ];
+
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -40,7 +43,6 @@ services.pipewire = {
   remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
 };
-  
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
@@ -97,7 +99,8 @@ services.pipewire = {
   gimp
   wine
   wine64
-  steam   
+  steam
+  docker   
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
