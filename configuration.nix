@@ -117,7 +117,12 @@ services.pipewire = {
   docker
   google-chrome
   woeusb
-  tor-browser   
+  tor-browser
+  ruby
+  python3
+  go
+  lua
+  php   
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
