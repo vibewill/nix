@@ -122,7 +122,11 @@ services.pipewire = {
   python3
   go
   lua
-  php   
+  php
+  zola
+  hugo
+  lutris
+  woeusb   
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
