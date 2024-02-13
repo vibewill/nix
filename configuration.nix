@@ -41,6 +41,11 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   programs.hyprland.enable = true;
+
+  virtualisation.libvirtd.enable = true;
+  boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
+  services.flatpak.enable = true;
+
   # Enable networking
   networking.networkmanager.enable = true;
   security.rtkit.enable = true;
