@@ -19,21 +19,19 @@
   programs.zsh.enable = true;
   virtualisation.docker.enable = true;
   users.extraGroups.docker.members = [ "vibewill-with-access-to-socket" ];
-  systemd = {
-    user.services.polkit-gnome-authentication-agent-1 = {
-      description = "polkit-gnome-authentication-agent-1";
-      wantedBy = [ "graphical-session.target" ];
-      wants = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
-      serviceConfig = {
-          Type = "simple";
-          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-          Restart = "on-failure";
-          RestartSec = 1;
-          TimeoutStopSec = 10;
-        };
-    };
-  };
+  ####nvidia#####
+  hardware.nvidia.package = pkgs.nvidia390;    
+
+
+
+
+  # Adicione outros módulos do Qt conforme necessário
+  # Adicione o suporte ao KVM
+
+  
+
+  virtualisation.virtualbox.host.enable = true; # se desejar suporte ao VirtualBox
+
 
 
 
@@ -45,6 +43,22 @@
   virtualisation.libvirtd.enable = true;
   boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
   services.flatpak.enable = true;
+  services.qemuGuest.enable = true;  
+  systemd = {
+  services.polkit-gnome-authentication-agent-1 = {
+    description = "polkit-gnome-authentication-agent-1";
+    wantedBy = [ "graphical-session.target" ];
+    wants = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
+    serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+  };
+};
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -62,7 +76,7 @@ services.pipewire = {
   remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
 };
-
+  
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
 
@@ -131,7 +145,7 @@ services.pipewire = {
   zola
   hugo
   lutris
-  woeusb   
+  woeusb 
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
