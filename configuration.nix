@@ -21,17 +21,17 @@
   users.extraGroups.docker.members = [ "vibewill-with-access-to-socket" ];
   ####nvidia#####
   hardware.nvidia.package = pkgs.nvidia390;    
-  
+    
 
 
 
   # Adicione outros módulos do Qt conforme necessário
   # Adicione o suporte ao KVM
-
+  
   
 
   virtualisation.virtualbox.host.enable = true; # se desejar suporte ao VirtualBox
-
+   
 
 
 
@@ -134,7 +134,12 @@ services.pipewire = {
   metasploit
   audacity
   qutebrowser
-  polkit_gnome     
+  polkit_gnome
+  bundler
+  nodejs
+  wget
+  vim
+  python310Packages.tkinter     
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
