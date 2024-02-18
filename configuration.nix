@@ -21,7 +21,7 @@
   users.extraGroups.docker.members = [ "vibewill-with-access-to-socket" ];
   ####nvidia#####
   hardware.nvidia.package = pkgs.nvidia390;    
-
+  
 
 
 
@@ -40,28 +40,9 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   programs.hyprland.enable = true;
 
-  virtualisation.libvirtd.enable = true;
-  boot.kernelModules = [ "kvm-amd" "kvm-intel" ];
-  services.flatpak.enable = true;
-  services.qemuGuest.enable = true;  
-  systemd = {
-  services.polkit-gnome-authentication-agent-1 = {
-    description = "polkit-gnome-authentication-agent-1";
-    wantedBy = [ "graphical-session.target" ];
-    wants = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
-    serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
-      };
-  };
-};
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager.enable = false;
   security.rtkit.enable = true;
 services.pipewire = {
   enable = true;
@@ -150,10 +131,10 @@ services.pipewire = {
   krita
   cargo
   xdg-user-dirs
-  polkit_gnome
   metasploit
   audacity
-  qutebrowser     
+  qutebrowser
+  polkit_gnome     
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
