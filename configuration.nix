@@ -145,7 +145,15 @@ services.pipewire = {
   zola
   hugo
   lutris
-  woeusb 
+  woeusb
+  gimp
+  krita
+  cargo
+  xdg-user-dirs
+  polkit_gnome
+  metasploit
+  audacity
+  qutebrowser     
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
