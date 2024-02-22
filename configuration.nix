@@ -143,7 +143,8 @@ services.pipewire = {
   python310Packages.tkinter
   spotify
   cava
-  jekyll     
+  jekyll
+  openshot-qt       
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
