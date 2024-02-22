@@ -140,7 +140,10 @@ services.pipewire = {
   nodejs
   wget
   vim
-  python310Packages.tkinter     
+  python310Packages.tkinter
+  spotify
+  cava
+  jekyll     
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
