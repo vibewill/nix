@@ -133,7 +133,8 @@ services.pipewire = {
   xdg-user-dirs
   metasploit
   audacity
-  qutebrowser
+  nmap
+  maltego
   polkit_gnome
   bundler
   nodejs
