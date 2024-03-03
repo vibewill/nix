@@ -20,8 +20,8 @@
   virtualisation.docker.enable = true;
   users.extraGroups.docker.members = [ "vibewill-with-access-to-socket" ];
   ####nvidia#####
-  hardware.nvidia.package = pkgs.nvidia390;    
-    
+ 
+  
 
 
 
@@ -145,7 +145,8 @@ services.pipewire = {
   cava
   jekyll
   openshot-qt
-  python39Packages.tkinter           
+  python39Packages.tkinter
+             
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
