@@ -20,7 +20,7 @@
   virtualisation.docker.enable = true;
   users.extraGroups.docker.members = [ "vibewill-with-access-to-socket" ];
   ####nvidia#####
- 
+  services.xserver.windowManager.qtile.enable = true;
   
 
 
@@ -100,9 +100,9 @@ services.pipewire = {
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  hyprland
+  qtile
   vscode
-  waybar
+  kitty
   wofi
   swaybg
   firefox
@@ -146,7 +146,7 @@ services.pipewire = {
   jekyll
   openshot-qt
   python39Packages.tkinter
-             
+  social-engineer-toolkit           
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
