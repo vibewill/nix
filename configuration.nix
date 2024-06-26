@@ -146,7 +146,8 @@ services.pipewire = {
   jekyll
   openshot-qt
   python39Packages.tkinter
-  social-engineer-toolkit           
+  social-engineer-toolkit
+  ventoy           
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
